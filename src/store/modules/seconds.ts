@@ -1,18 +1,18 @@
-import { TypeEnum } from "@/hooks/useType"
-import { writable } from "svelte/store"
+import { writable } from 'svelte/store'
+import { TypeEnum } from '@/hooks/useType'
 
 const SecondsMap = {
-    [TypeEnum.Work]: 25 * 60,
-    [TypeEnum.Break]: 5 * 60,
-    [TypeEnum.LongBreak]: 15 * 60
+  [TypeEnum.Work]: 25 * 60,
+  [TypeEnum.Break]: 5 * 60,
+  [TypeEnum.LongBreak]: 15 * 60,
 }
 
 export const currentSeconds = writable(SecondsMap[TypeEnum.Work])
 
 export function setCurrentSeconds(type: TypeEnum) {
-    currentSeconds.set(SecondsMap[type])
+  currentSeconds.set(SecondsMap[type])
 }
 
 export function countdown() {
-    currentSeconds.update(v => v - 1)
+  currentSeconds.update(v => v - 1)
 }
