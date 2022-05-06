@@ -1,20 +1,40 @@
+<script lang="ts" context="module">
+  export const titleMap = {
+    [TypeEnum.Work]: ['Working', 'Pausing'],
+    [TypeEnum.Break]: ['Breaking', 'Breaking Pause'],
+    [TypeEnum.LongBreak]: ['Long Break', 'Long Break Pause'],
+  }
+</script>
+
 <script lang="ts">
+  import { getCountdownTime } from '@/hooks/useCountdown'
   import { TypeEnum } from '@/hooks/useType'
-  import { currentType, setCurrentType } from '@/store/index'
+  import {
+    currentSeconds,
+    currentType,
+    isStart,
+    setCurrentType,
+  } from '@/store/index'
+  import { get } from 'svelte/store'
 
-  let cType: TypeEnum
-
-  currentType.subscribe(t => (cType = t))
+  currentType.subscribe(v => {
+    const titles = titleMap[v]
+    const pageTitle =
+      (get(isStart) ? titles[0] : titles[1]) +
+      `: ${getCountdownTime(get(currentSeconds))}`
+    document.title = pageTitle
+  })
 
   export let type: TypeEnum
 </script>
 
 <div
   class="cursor-pointer 
-  {cType === type ? 'font-bold  bg-dark-400/30  rounded-[5px]' : ''} 
-    px-4 py-2 text-[18px]
+  {$currentType === type ? 'font-bold  bg-dark-400/30  rounded-[5px]' : ''} 
+    sm:px-4 sm:py-2 text-2xl
+    flex justify-center
     text-white box-border item"
-  class:active-item={cType === type}
+  class:active-item={$currentType === type}
   on:click={() => {
     setCurrentType(type)
   }}

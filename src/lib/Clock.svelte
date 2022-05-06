@@ -1,13 +1,14 @@
 <script lang="ts">
   import ClockType from './ClockType.svelte'
+  import { getCountdownTime } from '@/hooks/useCountdown'
   import {
-    getCountdownTime,
-    initSeconds,
-    useCountdown,
-  } from '@/hooks/useCountdown'
-  import { isStart as StartStore, toggleStart, btnColor } from '@/store/index'
-
-  let [seconds, currentTime] = useCountdown()
+    isStart as StartStore,
+    toggleStart,
+    btnColor,
+    currentSeconds,
+    countdown,
+  } from '@/store/index'
+  import { get } from 'svelte/store'
 
   let isStart = false
   StartStore.subscribe(v => {
@@ -15,25 +16,29 @@
   })
 
   function reset() {
-    isStart = false
-    seconds = initSeconds
+    toggleStart()
   }
 
   setInterval(() => {
     if (isStart) {
-      if (seconds <= 0) return reset()
-      seconds -= 1
+      if (get(currentSeconds) <= 0) return reset()
+      countdown()
     }
   }, 1000)
 
   $: pageTitle = (isStart ? 'Working' : 'Pausing') + `: ${currentTime}`
 
-  $: currentTime = getCountdownTime(seconds)
+  let currentTime = ''
+  currentSeconds.subscribe(v => {
+    currentTime = getCountdownTime(v)
+  })
 </script>
 
 <main class="bg-white/15 w-[80%] rounded-md p-[30px] pt-[20px] box-border">
   <ClockType />
-  <div class="text-[120px] mt-[20px] font-bold text-white flex justify-center">
+  <div
+    class="text-6xl sm:text-9xl mt-[20px] font-bold text-white flex justify-center"
+  >
     {currentTime}
   </div>
   <div class="mt-[40px] flex justify-center">
@@ -41,7 +46,7 @@
       class="uppercase w-[55%] text-[22px] h-[50px] rounded-md flex justify-center items-center bg-white  font-bold {$btnColor}"
       class:isStart={!isStart}
       class:isEnd={isStart}
-      on:click={toggleStart}
+      on:click={() => toggleStart()}
     >
       {#if isStart} end {:else} start {/if}
     </button>

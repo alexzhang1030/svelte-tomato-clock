@@ -8,12 +8,3 @@ function formatData(date: Date) {
 export function getCountdownTime(seconds: number) {
   return formatData(new Date(seconds * 1000))
 }
-
-export const initSeconds = 25 * 60
-
-export function useCountdown(): [number, string] {
-  const seconds = initSeconds
-
-  const currentTime = getCountdownTime(seconds)
-  return [seconds, currentTime]
-}

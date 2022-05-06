@@ -3,7 +3,7 @@
   import { Types } from '@/hooks/useType'
 </script>
 
-<div class="w-full flex justify-center">
+<div class="w-full sm:flex justify-center">
   {#each Types as type}
     <ClockTypeItem {type} />
   {/each}

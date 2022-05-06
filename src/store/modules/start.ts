@@ -1,7 +1,10 @@
-import { writable } from "svelte/store"
+import { get, writable } from "svelte/store"
+import { setCurrentSeconds } from "./seconds"
+import { currentType } from "./type"
 
 export const isStart = writable(false)
 
-export function toggleStart() {
-    isStart.update(v => !v)
+export function toggleStart(flag?: boolean) {
+    isStart.set(flag === undefined ? !get(isStart) : flag)
+    setCurrentSeconds(get(currentType))
 }
