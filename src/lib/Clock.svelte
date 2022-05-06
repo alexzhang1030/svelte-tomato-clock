@@ -7,8 +7,10 @@
     btnColor,
     currentSeconds,
     countdown,
+    currentType,
   } from '@/store/index'
   import { get } from 'svelte/store'
+  import { createNotification } from '@/hooks/useNotification'
 
   let isStart = false
   StartStore.subscribe(v => {
@@ -16,6 +18,7 @@
   })
 
   function reset() {
+    createNotification(get(currentType))
     toggleStart()
   }
 

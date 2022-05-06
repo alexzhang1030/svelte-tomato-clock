@@ -1,6 +1,12 @@
 <script lang="ts">
   import { color } from '@/store/index'
+  import { onMount } from 'svelte'
+  import { requestPermission } from './hooks/useNotification'
   import Clock from './lib/Clock.svelte'
+
+  onMount(() => {
+    requestPermission()
+  })
 </script>
 
 <main
