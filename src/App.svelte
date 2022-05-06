@@ -1,9 +1,25 @@
 <script lang="ts">
+  import { TypeEnum } from './hooks/useType'
+  import { currentType } from '@/store/index'
   import Clock from './lib/Clock.svelte'
+
+  let cType: TypeEnum = TypeEnum.Work
+
+  currentType.subscribe(v => {
+    cType = v
+    console.log('changed', cType)
+  })
+  const bgMap = {
+    [TypeEnum.Work]: 'bg-[#d44b46]',
+    [TypeEnum.Break]: 'bg-[#4c9195]',
+    [TypeEnum.LongBreak]: 'bg-[#457ca3]',
+  }
+
+  $: cBg = bgMap[cType]
 </script>
 
 <main
-  class="w-full bg-[#d44b46] h-[100vh] flex justify-center items-start p-5 box-border"
+  class="w-full {cBg} h-[100vh] transition-colors flex justify-center items-start p-5 box-border"
 >
   <main class="w-[580px] flex justify-center flex-wrap">
     <h1

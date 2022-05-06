@@ -5,8 +5,14 @@
     initSeconds,
     useCountdown,
   } from '@/hooks/useCountdown'
+  import { isStart as StartStore, toggleStart } from '@/store/index'
 
-  let [seconds, currentTime, isStart] = useCountdown()
+  let [seconds, currentTime] = useCountdown()
+
+  let isStart = false
+  StartStore.subscribe(v => {
+    isStart = v
+  })
 
   function reset() {
     isStart = false
@@ -35,7 +41,7 @@
       class="uppercase w-[55%] text-[22px] h-[50px] rounded-md flex justify-center items-center bg-white text-red-600 font-bold"
       class:isStart={!isStart}
       class:isEnd={isStart}
-      on:click={() => (isStart = !isStart)}
+      on:click={toggleStart}
     >
       {#if isStart} end {:else} start {/if}
     </button>

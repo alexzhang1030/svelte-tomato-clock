@@ -11,10 +11,9 @@ export function getCountdownTime(seconds: number) {
 
 export const initSeconds = 25 * 60
 
-export function useCountdown(): [number, string, boolean] {
+export function useCountdown(): [number, string] {
   const seconds = initSeconds
-  const isStart = false
 
   const currentTime = getCountdownTime(seconds)
-  return [seconds, currentTime, isStart]
+  return [seconds, currentTime]
 }

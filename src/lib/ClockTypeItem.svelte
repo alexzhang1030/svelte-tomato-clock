@@ -13,7 +13,8 @@
   class="cursor-pointer 
   {cType === type ? 'font-bold  bg-dark-400/30  rounded-[5px]' : ''} 
     px-4 py-2 text-[18px]
-    text-white box-border"
+    text-white box-border item"
+  class:active-item={cType === type}
   on:click={() => {
     setCurrentType(type)
   }}
@@ -26,3 +27,12 @@
     Long Break
   {/if}
 </div>
+
+<style>
+  .item:active {
+    transform: translateY(2px);
+  }
+  .active-item {
+    transform: translateY(2px);
+  }
+</style>
