@@ -1,16 +1,4 @@
-import { TypeEnum } from "@/hooks/useType";
-import { writable } from "svelte/store";
-
-export const currentType = writable(TypeEnum.Work);
-
-export function setCurrentType(type: TypeEnum) {
-    currentType.set(type);
-}
-
-export const isStart = writable(false)
-
-export function toggleStart() {
-    isStart.update(v => !v)
-}
-
-export const currentSeconds = writable()
+export * from './modules/seconds'
+export * from './modules/start'
+export * from './modules/type'
+export * from './modules/color'

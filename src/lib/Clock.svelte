@@ -5,7 +5,7 @@
     initSeconds,
     useCountdown,
   } from '@/hooks/useCountdown'
-  import { isStart as StartStore, toggleStart } from '@/store/index'
+  import { isStart as StartStore, toggleStart, btnColor } from '@/store/index'
 
   let [seconds, currentTime] = useCountdown()
 
@@ -38,7 +38,7 @@
   </div>
   <div class="mt-[40px] flex justify-center">
     <button
-      class="uppercase w-[55%] text-[22px] h-[50px] rounded-md flex justify-center items-center bg-white text-red-600 font-bold"
+      class="uppercase w-[55%] text-[22px] h-[50px] rounded-md flex justify-center items-center bg-white  font-bold {$btnColor}"
       class:isStart={!isStart}
       class:isEnd={isStart}
       on:click={toggleStart}
