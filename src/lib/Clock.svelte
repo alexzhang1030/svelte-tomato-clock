@@ -26,8 +26,6 @@
     }
   }, 1000)
 
-  $: pageTitle = (isStart ? 'Working' : 'Pausing') + `: ${currentTime}`
-
   let currentTime = ''
   currentSeconds.subscribe(v => {
     currentTime = getCountdownTime(v)
@@ -52,10 +50,6 @@
     </button>
   </div>
 </main>
-
-<svelte:head>
-  <title>{pageTitle}</title>
-</svelte:head>
 
 <style>
   .isStart {

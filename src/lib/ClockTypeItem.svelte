@@ -1,11 +1,3 @@
-<script lang="ts" context="module">
-  export const titleMap = {
-    [TypeEnum.Work]: ['Working', 'Pausing'],
-    [TypeEnum.Break]: ['Breaking', 'Breaking Pause'],
-    [TypeEnum.LongBreak]: ['Long Break', 'Long Break Pause'],
-  }
-</script>
-
 <script lang="ts">
   import { getCountdownTime } from '@/hooks/useCountdown'
   import { TypeEnum } from '@/hooks/useType'
@@ -17,11 +9,9 @@
   } from '@/store/index'
   import { get } from 'svelte/store'
 
-  currentType.subscribe(v => {
-    const titles = titleMap[v]
+  currentSeconds.subscribe(v => {
     const pageTitle =
-      (get(isStart) ? titles[0] : titles[1]) +
-      `: ${getCountdownTime(get(currentSeconds))}`
+      (get(isStart) ? 'Ticking' : 'Pausing') + `: ${getCountdownTime(v)}`
     document.title = pageTitle
   })
 
