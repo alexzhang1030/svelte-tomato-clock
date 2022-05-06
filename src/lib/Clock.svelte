@@ -4,7 +4,7 @@
     getCountdownTime,
     initSeconds,
     useCountdown,
-  } from '../hooks/useCountdown'
+  } from '@/hooks/useCountdown'
 
   let [seconds, currentTime, isStart] = useCountdown()
 
@@ -20,19 +20,19 @@
     }
   }, 1000)
 
-  $: pageTitle = (isStart ? 'Working' : 'Pausing') + ': ' + currentTime
+  $: pageTitle = (isStart ? 'Working' : 'Pausing') + `: ${currentTime}`
 
   $: currentTime = getCountdownTime(seconds)
 </script>
 
-<main class="bg-white/15 w-[80%] rounded-md p-[20px] box-border">
-  <ClockType {isStart} />
+<main class="bg-white/15 w-[80%] rounded-md p-[30px] pt-[20px] box-border">
+  <ClockType />
   <div class="text-[120px] mt-[20px] font-bold text-white flex justify-center">
     {currentTime}
   </div>
   <div class="mt-[40px] flex justify-center">
     <button
-      class="uppercase w-[40%] text-[22px] h-[60px] rounded-md flex justify-center items-center bg-white text-red-600 font-bold"
+      class="uppercase w-[55%] text-[22px] h-[50px] rounded-md flex justify-center items-center bg-white text-red-600 font-bold"
       class:isStart={!isStart}
       class:isEnd={isStart}
       on:click={() => (isStart = !isStart)}

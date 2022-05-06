@@ -1,9 +1,10 @@
 <script lang="ts">
   import ClockTypeItem from './ClockTypeItem.svelte'
-
-  export let isStart = false
+  import { Types } from '@/hooks/useType'
 </script>
 
 <div class="w-full flex justify-center">
-  <ClockTypeItem {isStart} />
+  {#each Types as type}
+    <ClockTypeItem {type} />
+  {/each}
 </div>
