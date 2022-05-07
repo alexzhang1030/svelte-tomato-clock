@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@alexzhang1030/eslint-config': ^1.1.1
+  '@alexzzz/eslint-config': ^1.3.0
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.42
   '@tsconfig/svelte': 3.0.0
   eslint: ^8.14.0
@@ -15,7 +15,7 @@ specifiers:
   windicss: 3.5.1
 
 devDependencies:
-  '@alexzhang1030/eslint-config': 1.1.1_t725usgvqspm5woeqpaxbfp2qu
+  '@alexzzz/eslint-config': 1.3.0_t725usgvqspm5woeqpaxbfp2qu
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.42_svelte@3.48.0+vite@2.9.8
   '@tsconfig/svelte': 3.0.0
   eslint: 8.14.0
@@ -30,8 +30,8 @@ devDependencies:
 
 packages:
 
-  /@alexzhang1030/eslint-config-basic/1.1.1_eslint@8.14.0:
-    resolution: {integrity: sha512-88seBh26PpghEMufkdb0OiDg0b5FHvkBUwSy7tySYfAbHk0S+/Qn8/iEXNlhRv9o2vKMEVwWaUkuXxcrLQ68PQ==}
+  /@alexzzz/eslint-config-basic/1.3.0_eslint@8.14.0:
+    resolution: {integrity: sha512-a/Zn0aggFhXaheaouAZwOaIuJlBzJpavev5swiqkPf2itftvBSE1ADRcoWSZ31RI8nyspZ+kdwBurLlPdmpdZA==}
     dependencies:
       eslint-plugin-eslint-comments: 3.2.0_eslint@8.14.0
       eslint-plugin-html: 6.2.0
@@ -49,10 +49,10 @@ packages:
       - supports-color
     dev: true
 
-  /@alexzhang1030/eslint-config-react/1.1.1_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-qpj+FZanZEsprkoQhIF6u8cAT4GkLxFxcAZrvWFKV8pG/IMIAc66VkeRcUXKBsc/9OAbMVSXM2pBJ6WQhprrAw==}
+  /@alexzzz/eslint-config-react/1.3.0_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-MRbZNkoiIcFm4gx4ww2ZBGFASFbCD5vZ9OZ5xaiE72vTp4sGZLeYDZ/2l/G++ZjmhQkQBiZVEFUljP4dVe4N6w==}
     dependencies:
-      '@alexzhang1030/eslint-config-typescript': 1.1.1_t725usgvqspm5woeqpaxbfp2qu
+      '@alexzzz/eslint-config-typescript': 1.3.0_t725usgvqspm5woeqpaxbfp2qu
       eslint-plugin-react: 7.29.4_eslint@8.14.0
     transitivePeerDependencies:
       - eslint
@@ -60,10 +60,10 @@ packages:
       - typescript
     dev: true
 
-  /@alexzhang1030/eslint-config-typescript/1.1.1_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-77o2MLrAO5+Mt/9ZbHi9CKUxw8xOEkt44elT58jDq2rXrNuKGnFgmkxfKZkqBXmr5payNMsU/3lmQjXgPEOn/Q==}
+  /@alexzzz/eslint-config-typescript/1.3.0_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-Ga4DaqUM6cqj051JgxcyV9GYKz0haF5309OLs4E4IgnU8i+LOYADdN/4Tb6uXs5xYADUkKwpG42ksNenOqkIog==}
     dependencies:
-      '@alexzhang1030/eslint-config-basic': 1.1.1_eslint@8.14.0
+      '@alexzzz/eslint-config-basic': 1.3.0_eslint@8.14.0
       '@typescript-eslint/eslint-plugin': 5.22.0_lnjlwhtxjffjmj5o7dnwvwyqxq
       '@typescript-eslint/parser': 5.22.0_t725usgvqspm5woeqpaxbfp2qu
     transitivePeerDependencies:
@@ -72,10 +72,10 @@ packages:
       - typescript
     dev: true
 
-  /@alexzhang1030/eslint-config-vue/1.1.1_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-1KW4DEGsDuY1NV7QLlanwYzkZ0SuCtKaMQ+yklAZwaExijqXSDZG3B+OX7fN0czJCBdLnbVs2VP84kBWccJxMQ==}
+  /@alexzzz/eslint-config-vue/1.3.0_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-XALOxtfguc9EZsi2WixzdGKeUizeK+d8Sem7lFjvjUsXabNXM4g/sqERhZJLqCXk3L6vDTPxI9WtKsORFJDw9A==}
     dependencies:
-      '@alexzhang1030/eslint-config-typescript': 1.1.1_t725usgvqspm5woeqpaxbfp2qu
+      '@alexzzz/eslint-config-typescript': 1.3.0_t725usgvqspm5woeqpaxbfp2qu
       eslint-plugin-vue: 8.7.1_eslint@8.14.0
     transitivePeerDependencies:
       - eslint
@@ -83,11 +83,11 @@ packages:
       - typescript
     dev: true
 
-  /@alexzhang1030/eslint-config/1.1.1_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-5moFr1KNhyIGsXZMm/955HZMbxw80c0LrGvXcNhLTNLkH9NzLNNU754bF3hpGS4Z7RL6V4EGKzl/pQ/s6pY2wA==}
+  /@alexzzz/eslint-config/1.3.0_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-640QO7EWHkXikXp9X6uzsY6CYdLBDHvCd48utdr7KKB83DaKb7eny99ybTQ36BkZm6X6U9rTscEJ9tB3l7pcPg==}
     dependencies:
-      '@alexzhang1030/eslint-config-react': 1.1.1_t725usgvqspm5woeqpaxbfp2qu
-      '@alexzhang1030/eslint-config-vue': 1.1.1_t725usgvqspm5woeqpaxbfp2qu
+      '@alexzzz/eslint-config-react': 1.3.0_t725usgvqspm5woeqpaxbfp2qu
+      '@alexzzz/eslint-config-vue': 1.3.0_t725usgvqspm5woeqpaxbfp2qu
     transitivePeerDependencies:
       - eslint
       - supports-color
