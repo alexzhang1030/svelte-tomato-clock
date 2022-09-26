@@ -20,7 +20,7 @@
     "svelte-preprocess": "4.10.7",
     "tslib": "2.4.0",
     "typescript": "4.6.4",
-    "vite": "2.9.8",
+    "vite": "2.9.15",
     "vite-plugin-windicss": "1.8.8",
     "windicss": "3.5.1"
   }
